@@ -1,34 +1,14 @@
-Introduction
-============
+# Open RegEdit Key
 
-OpenRegEditKey is a Firefox/Seamonkey extension that lets you select a 
+Open RegEdit Key is a Pale Moon extension that lets you select a 
 Windows registry key on a webpage and open Windows registry editor 
 (regedit.exe) with that key selected in the editor. 
 
+#### Supports
+ * Pale Moon [25.0a1pre - 28.*]
 
-Building XPI
-============
+## Building
+Simply download the contents of the repository and pack the src folder into a .zip file. Then, rename the file to .xpi and drag into the browser.
 
-You should have NodeJS and NPM already installed. 
-
-You also need to have grunt-cli installed (first time only):
-
-```
-npm install grunt-cli -g
-```
-
-Install dependencies (first time only):
-
-```
-npm install
-```
-
-Afterwards, you can run 
-
-```
-grunt
-```
-
-everytime you need to create a new xpi. Several `install.rdf` properties
-are set through package.json, specially version.
-
+## Download
+You can grab the latest release from the [Official Web Site](//realityripple.com/Software/Mozilla-Extensions/Open-RegEdit-Key/).
