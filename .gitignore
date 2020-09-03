@@ -1,4 +1,1 @@
-open-regedit-key.sublime-*
-node_modules
-dist/
-openregeditkey@kashiif.com
+*.xpi

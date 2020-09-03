@@ -2,32 +2,24 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
  xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 		<Description about="urn:mozilla:install-manifest">
-    <em:id>openregeditkey@kashiif.com</em:id>
+    <em:id>{3F759299-A9A4-5ADD-946E-5285A7B27DDE}</em:id>
     <em:type>2</em:type>
     <em:name>Open RegEdit Key</em:name>
     <em:bootstrap>true</em:bootstrap>
-    <em:version>__version__</em:version>
-    <em:creator>Kashif Iqbal Khan</em:creator>
+    <em:version>1.0.1</em:version>
+    <em:creator>RealityRipple</em:creator>
+    <em:contributor>Kashif Iqbal Khan</em:contributor>
     <em:description>Open selected registry in the registry editor from context menu.</em:description>
-    <em:homepageURL></em:homepageURL>
+    <em:homepageURL>https://realityripple.com/Software/Mozilla-Extensions/Open-RegEdit-Key/</em:homepageURL>
+    <em:updateURL>https://realityripple.com/Software/Mozilla-Extensions/Open-RegEdit-Key/update.rdf</em:updateURL>
 		<em:iconURL>resource://open-regedit-key/icon.png</em:iconURL>  
 		<em:icon64URL>resource://open-regedit-key/icon.png</em:icon64URL>  
-		
+    <!-- Pale Moon -->
     <em:targetApplication>
       <Description>
-        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-        <!-- firefox -->
-        <em:minVersion>4.0</em:minVersion>
-        <em:maxVersion>49.0</em:maxVersion>
-      </Description>
-    </em:targetApplication>
-
-    <!-- SeaMonkey -->
-    <em:targetApplication>
-      <Description>
-        <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
-        <em:minVersion>2.2</em:minVersion>
-        <em:maxVersion>2.46</em:maxVersion>
+        <em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
+        <em:minVersion>25.0a1pre</em:minVersion>
+        <em:maxVersion>28.*</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>
