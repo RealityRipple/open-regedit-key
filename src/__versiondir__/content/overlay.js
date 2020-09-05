@@ -1,7 +1,7 @@
 'use strict;'
-var EXPORTED_SYMBOLS = ['openRegeditKey'];
+var EXPORTED_SYMBOLS = ['openRegistryKey'];
 
-var openRegeditKey = {
+var openRegistryKey = {
 	_consoleService:null,
 	_regEditPath: null,
 	_arrHives:new Array ('HKEY_CURRENT_CONFIG', 'HKEY_LOCAL_MACHINE', 'HKEY_CLASSES_ROOT', 'HKEY_CURRENT_USER', 'HKEY_USERS'),
@@ -33,16 +33,16 @@ var openRegeditKey = {
 	},
 
 	bind: function(window) {
-		window.setTimeout(function() { openRegeditKey.handleLoad(window); }, 500);
+		window.setTimeout(function() { openRegistryKey.handleLoad(window); }, 500);
 	}, 
 
 	unbind: function(window) {
 		var document = window.document;
 	    var cm = document.getElementById('contentAreaContextMenu');
-	    var mItem = document.getElementById('context-openregeditkey');
-	    mItem.removeEventListener('click', openRegeditKey.handleMenuItemClick);
+	    var mItem = document.getElementById('context-openregistrykey');
+	    mItem.removeEventListener('click', openRegistryKey.handleMenuItemClick);
 	    cm.removeChild(mItem);
-		cm.removeEventListener('popupshowing', openRegeditKey.handleContextMenuShowing);
+		cm.removeEventListener('popupshowing', openRegistryKey.handleContextMenuShowing);
 	}, 
 
 	handleLoad: function(window){
@@ -50,24 +50,24 @@ var openRegeditKey = {
 
 	    var cm = document.getElementById('contentAreaContextMenu');
 	    var mItem = document.createElement('menuitem');
-	    mItem.setAttribute('id','context-openregeditkey');
+	    mItem.setAttribute('id','context-openregistrykey');
 	    mItem.setAttribute('class','menuitem-iconic');
-	    mItem.setAttribute('image','resource://open-regedit-key/__versiondir__/skin/pic16.png');
+	    mItem.setAttribute('image','resource://open-registry-key/__versiondir__/skin/pic16.png');
 	    mItem.setAttribute('label','Open in RegEdit');
-	    mItem.addEventListener('click', openRegeditKey.handleMenuItemClick, false);
+	    mItem.addEventListener('click', openRegistryKey.handleMenuItemClick, false);
 
 	    cm.appendChild(mItem);
 
-		cm.addEventListener('popupshowing', openRegeditKey.handleContextMenuShowing, false);
+		cm.addEventListener('popupshowing', openRegistryKey.handleContextMenuShowing, false);
 	},
 
 	handleContextMenuShowing: function(evt) {
 		var document = evt.target.ownerDocument;
-		document.getElementById('context-openregeditkey').hidden = !openRegeditKey._getSelectedText(document);
+		document.getElementById('context-openregistrykey').hidden = !openRegistryKey._getSelectedText(document);
 	},
 
 	_getSelectedText: function(doc) {
-		return openRegeditKey._getActiveWindow().content.getSelection().toString();
+		return openRegistryKey._getActiveWindow().content.getSelection().toString();
 	},
 
 	_normalizeString: function(theText)	{
@@ -118,23 +118,23 @@ var openRegeditKey = {
   
 	handleMenuItemClick: function(evt) {
 		var document = evt.target.ownerDocument;
-		var selected = openRegeditKey._getSelectedText(document);
+		var selected = openRegistryKey._getSelectedText(document);
 		if (!selected) return;
 
 
-		selected = openRegeditKey._normalizeString(selected);
-		var hiveCode = openRegeditKey._getHiveCode(selected);
+		selected = openRegistryKey._normalizeString(selected);
+		var hiveCode = openRegistryKey._getHiveCode(selected);
 
 		while(hiveCode == -1) {
-			selected = openRegeditKey._getActiveWindow().prompt('Please enter valid key', selected);
+			selected = openRegistryKey._getActiveWindow().prompt('Please enter a valid Registry Key', selected);
 
 			if (!selected) return;
 
-			selected = openRegeditKey._normalizeString(selected);
-			hiveCode = openRegeditKey._getHiveCode(selected);
+			selected = openRegistryKey._normalizeString(selected);
+			hiveCode = openRegistryKey._getHiveCode(selected);
 		}
 
-		openRegeditKey.openKey(openRegeditKey._getValidKey(hiveCode, selected));
+		openRegistryKey.openKey(openRegistryKey._getValidKey(hiveCode, selected));
 	},
   
   	openKey: function(str) {

@@ -9,11 +9,11 @@ Cu.import('resource://gre/modules/Services.jsm');
 
 var WindowListener = {
   setupBrowserUI: function(window) {
-    openRegeditKey.bind(window);
+    openRegistryKey.bind(window);
   },
 
   tearDownBrowserUI: function(window) {
-    openRegeditKey.unbind(window);
+    openRegistryKey.unbind(window);
   },
 
   // nsIWindowMediatorListener functions
@@ -45,10 +45,10 @@ function startup(data, reason) {
   let alias = Services.io.newFileURI(data.installPath);
   if (!data.installPath.isDirectory())
     alias = Services.io.newURI('jar:' + alias.spec + '!/', null, null);
-  resource.setSubstitution('open-regedit-key', alias);
+  resource.setSubstitution('open-registry-key', alias);
 
-  Cu.import('resource://open-regedit-key/__versiondir__/content/overlay.js');
-  openRegeditKey.init();
+  Cu.import('resource://open-registry-key/__versiondir__/content/overlay.js');
+  openRegistryKey.init();
 
   let wm = Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator);
 
@@ -71,7 +71,7 @@ function shutdown(data, reason) {
     return;
 
   let resource = Services.io.getProtocolHandler('resource').QueryInterface(Ci.nsIResProtocolHandler);
-  resource.setSubstitution('open-regedit-key', null);
+  resource.setSubstitution('open-registry-key', null);
 
   let wm = Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator);
 

@@ -2,18 +2,18 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
  xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 		<Description about="urn:mozilla:install-manifest">
-    <em:id>{3F759299-A9A4-5ADD-946E-5285A7B27DDE}</em:id>
+    <em:id>{364E0C7D-482C-5888-BEC2-E4961DB8653A}</em:id>
     <em:type>2</em:type>
-    <em:name>Open RegEdit Key</em:name>
+    <em:name>Open Registry Key</em:name>
     <em:bootstrap>true</em:bootstrap>
-    <em:version>1.0.1</em:version>
+    <em:version>1.1</em:version>
     <em:creator>RealityRipple</em:creator>
     <em:contributor>Kashif Iqbal Khan</em:contributor>
     <em:description>Open selected registry in the registry editor from context menu.</em:description>
-    <em:homepageURL>https://realityripple.com/Software/Mozilla-Extensions/Open-RegEdit-Key/</em:homepageURL>
-    <em:updateURL>https://realityripple.com/Software/Mozilla-Extensions/Open-RegEdit-Key/update.rdf</em:updateURL>
-		<em:iconURL>resource://open-regedit-key/icon.png</em:iconURL>  
-		<em:icon64URL>resource://open-regedit-key/icon.png</em:icon64URL>  
+    <em:homepageURL>https://realityripple.com/Software/Mozilla-Extensions/Open-Registry-Key/</em:homepageURL>
+    <em:updateURL>https://realityripple.com/Software/Mozilla-Extensions/Open-Registry-Key/update.rdf</em:updateURL>
+		<em:iconURL>resource://open-registry-key/icon.png</em:iconURL>  
+		<em:icon64URL>resource://open-registry-key/icon.png</em:icon64URL>  
     <!-- Pale Moon -->
     <em:targetApplication>
       <Description>
