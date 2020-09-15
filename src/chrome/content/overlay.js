@@ -1,4 +1,3 @@
-'use strict;'
 var openRegistryKey = {
  _regEditPath: null,
  _arrHives: new Array('HKEY_CURRENT_CONFIG', 'HKEY_LOCAL_MACHINE', 'HKEY_CLASSES_ROOT', 'HKEY_CURRENT_USER', 'HKEY_USERS'),
