@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
- xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-		<Description about="urn:mozilla:install-manifest">
-    <em:id>{364E0C7D-482C-5888-BEC2-E4961DB8653A}</em:id>
-    <em:type>2</em:type>
-    <em:name>Open Registry Key</em:name>
-    <em:bootstrap>true</em:bootstrap>
-    <em:version>1.1</em:version>
-    <em:creator>RealityRipple</em:creator>
-    <em:contributor>Kashif Iqbal Khan</em:contributor>
-    <em:description>Open selected registry in the registry editor from context menu.</em:description>
-    <em:homepageURL>https://realityripple.com/Software/Mozilla-Extensions/Open-Registry-Key/</em:homepageURL>
-    <em:updateURL>https://realityripple.com/Software/Mozilla-Extensions/Open-Registry-Key/update.rdf</em:updateURL>
-		<em:iconURL>resource://open-registry-key/icon.png</em:iconURL>  
-		<em:icon64URL>resource://open-registry-key/icon.png</em:icon64URL>  
-    <!-- Pale Moon -->
-    <em:targetApplication>
-      <Description>
-        <em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
-        <em:minVersion>25.0a1pre</em:minVersion>
-        <em:maxVersion>28.*</em:maxVersion>
-      </Description>
-    </em:targetApplication>
-  </Description>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+ <Description about="urn:mozilla:install-manifest">
+  <em:name>Open Registry Key</em:name>
+  <em:id>{364E0C7D-482C-5888-BEC2-E4961DB8653A}</em:id>
+  <em:version>1.2</em:version>
+  <em:type>2</em:type>
+  <em:targetApplication>
+   <Description>
+    <em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
+    <em:minVersion>25.0a1pre</em:minVersion>
+    <em:maxVersion>28.*</em:maxVersion>
+   </Description>
+  </em:targetApplication>
+  <em:description>Open selected registry key in the registry editor from context menu.</em:description>
+  <em:homepageURL>https://realityripple.com/Software/Mozilla-Extensions/Open-Registry-Key/</em:homepageURL>
+  <em:updateURL>https://realityripple.com/Software/Mozilla-Extensions/Open-Registry-Key/update.rdf</em:updateURL>
+  <em:iconURL>chrome://ork/skin/icon.png</em:iconURL>
+  <em:icon64URL>chrome://ork/skin/icon64.png</em:icon64URL>
+  <em:creator>RealityRipple</em:creator>
+  <em:contributor>Kashif Iqbal Khan</em:contributor>
+ </Description>
 </RDF>
