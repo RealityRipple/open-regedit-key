@@ -1,4 +1,4 @@
-content	ork								chrome/content/
-locale	 ork		en-US chrome/locale/en-US/
-skin	   ork		skin  chrome/skin/
-overlay	chrome://browser/content/browser.xul chrome://ork/content/overlay.xul
+content ork        chrome/content/
+locale  ork  en-US chrome/locale/en-US/
+skin    ork  skin  chrome/skin/
+overlay chrome://browser/content/browser.xul chrome://ork/content/overlay.xul

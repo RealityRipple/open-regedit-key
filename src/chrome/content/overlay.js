@@ -5,7 +5,7 @@ var openRegistryKey = {
  {
   let env = Components.classes['@mozilla.org/process/environment;1'].getService(Components.interfaces.nsIEnvironment);
   let winDir = env.get('windir');
-  if (winDir.charAt(winDir.length - 1) != '\\')
+  if (winDir.charAt(winDir.length - 1) !== '\\')
    winDir += '\\';
   openRegistryKey._regEditPath = winDir + 'regedit.exe';
   let file = openRegistryKey.getFileObjectForPath(openRegistryKey._regEditPath);
@@ -48,7 +48,7 @@ var openRegistryKey = {
    let r = new RegExp('^' + arrHivesAbbr[i], 'i');
    theText = theText.replace(r, openRegistryKey._arrHives[i]);
   }
-  if (theText.charAt(theText.length - 1) == ']')
+  if (theText.charAt(theText.length - 1) === ']')
    theText = theText.substring(0, theText.length - 1);
   return theText;
  },
@@ -75,7 +75,7 @@ var openRegistryKey = {
    return;
   selected = openRegistryKey._normalizeString(selected);
   let hiveCode = openRegistryKey._getHiveCode(selected);
-  while(hiveCode == -1)
+  while(hiveCode === -1)
   {
    let gBundle = Components.classes['@mozilla.org/intl/stringbundle;1'].getService(Components.interfaces.nsIStringBundleService);
    let locale = gBundle.createBundle('chrome://ork/locale/openregistrykey.properties');
@@ -85,7 +85,7 @@ var openRegistryKey = {
    let newVal = {value: selected};
    if (!gPrompt.prompt(openRegistryKey._getActiveWindow(), title, message, newVal, null, {value: false}))
     return;
-   if (selected == newVal.value)
+   if (selected === newVal.value)
     return;
    selected = newVal.value;
    selected = openRegistryKey._normalizeString(selected);
@@ -95,7 +95,7 @@ var openRegistryKey = {
  },
  openKey: function(str)
  {
-  if (str.charAt(str.length - 1) == '\\')
+  if (str.charAt(str.length - 1) === '\\')
    str = str.substring(0, str.length - 1);
   let wrk = Components.classes['@mozilla.org/windows-registry-key;1'].createInstance(Components.interfaces.nsIWindowsRegKey);
   wrk.create(wrk.ROOT_KEY_CURRENT_USER, 'Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Regedit', wrk.ACCESS_WRITE);
@@ -114,19 +114,19 @@ var openRegistryKey = {
  },
  _getValidKey: function(hiveCode, theText)
  {
-  let iLastBSlash, strKey, strValue, strVerifiedKey = '';
+  let strVerifiedKey = '';
   let firstSep = theText.indexOf('\\');
-  if (firstSep == -1) return theText;
+  if (firstSep === -1) return theText;
   let strHive = openRegistryKey._arrHives[hiveCode];
   let strWithoutHive = theText.substr(firstSep+1);
-  if (strWithoutHive.length == 0)
+  if (strWithoutHive.length === 0)
    return strHive;
   let arrKeysAndValues = strWithoutHive.split('\\');
   let wrk = Components.classes['@mozilla.org/windows-registry-key;1'].createInstance(Components.interfaces.nsIWindowsRegKey);
   let apiCodes = [0x80000005, wrk.ROOT_KEY_LOCAL_MACHINE, wrk.ROOT_KEY_CLASSES_ROOT, wrk.ROOT_KEY_CURRENT_USER, 0x80000003];
   let rootKey = apiCodes[hiveCode];
   wrk.open(rootKey,  arrKeysAndValues[0], wrk.ACCESS_READ);
-  for (i = 1; i < arrKeysAndValues.length; i++)
+  for (let i = 1; i < arrKeysAndValues.length; i++)
   {
    let nextKey = strVerifiedKey + (i>1 ? '\\' : '') + arrKeysAndValues[i];
    if (!wrk.hasChild(nextKey))
